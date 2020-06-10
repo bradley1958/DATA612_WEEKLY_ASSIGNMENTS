@@ -1,0 +1,8 @@
+The Extra Credit Challenge was to download the Vaccine data on the DTP3 Immunization dataset.
+Next, we were to write a short Jupyter Notebook on the exploring the dataset.
+First, I loaded the datset and looked at the data. Taking note of the many NaN (null values) throughout the dataset.
+Next, I used a basic ".info()" syntax to look at the dataset, and then followed up with looking at the Column Headings
+by using the "print(df.columns)" syntax.
+I followed up by looking at only the UK and US rows by using the "iloc" syntax - df.iloc[183:185]
+Next, I created a basic bar chart to compare the three year period 1980 to 1982 between the UK and the US
+This chart showed how the UK lagged behind the US in the number of DIP3 Immunizations for that period (1980 - 1982)
