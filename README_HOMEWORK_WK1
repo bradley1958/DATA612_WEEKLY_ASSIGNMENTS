@@ -13,3 +13,6 @@ This is followed by printing the shape of our 2010 State Drug Utilization datset
 Next, we printout the Summary Statistics using a series of pandas syntax commands (above).
 
 Finally, we use the df.groupby([' ', ' ']).mean() syntax to review specific column "mean" values grouped by year and quarter.
+
+GitHub Readme File Input Data612 Wk2 Homework/Professor Islamaj
+Orren Bradley Summer 2020
