@@ -1,0 +1,18 @@
+Summary:
+
+Our task this week was to merge two datasets, identify the missing values (NaN), and provide a count of missing values per object in the merged dataset. Then, clean that data preparing it for further exploration/algorithm use. Finally, post the results to our GitHub page.
+
+1 - I merged my State Drug Utilization Data 2010 dataset with the Yahoo_Stocks dataset.
+
+2 - Then, I reviewed/explored those datsets for NaN values, then I did a horizontal stack merging the two datasets.
+
+3 - Next, our new DataFrame "horizontal_stck" was explored for missing values. I used the "isnull().sum()" syntax to show the counts of missing values (NaN) per object with the merged dataset.
+
+4 - Then, I used the "fillna" syntax to replace all NaN values with "zeros" filling in all those gaps in the merged dataset.
+
+5 - Nest, I used the "isnull().sum()" syntax to again show the null value counts per object. This time the output showed no NaN values for any of the objects within our merged DataFrame.
+
+6 - Afterward, I did a basic output of summary statistics just to do a quick exploration of our newly cleaned DataFrame.
+
+PROFESSOR ISLAMAJ - DATA612/SUMMER 2020
+BRADLEY, ORREN DATA612 WEEK 4 ASSIGNMENT
