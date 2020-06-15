@@ -1,0 +1,11 @@
+SUMMARY:
+
+We have used the ".astype" syntax in Pandas to convert various columns from one Dtype to another.
+In this case from a non-categorical Dtype to a categorical Dtype (Action Item 1).
+
+Next we used the ".astype" syntax to convert a different Column Dtype to a String (Action Item 2).
+In my example I converted a Dtype of "bool" to Dtype "object, 
+and then converted it back to it's original Dtype of "bool" using the ".astype" syntax.
+
+From our lecture notes we have seen that Dtypes govern which operations can and cannot be performed on a given column.
+The ability to convert a Column type gives the analyst another tool so that the dataset can be prepared and cleaned for further data modeling/exploration and algorithm use.
