@@ -1,1 +1,83 @@
+## Action Items:       
+•	Working with strings.
+1. Clean a column on your data set using 
+regular expression methods.      
+2. Store the cleaned column into another column of your data set and call it “your_col_name_cleaned”.     
 
+  *Another data set will be provided if your data set is not appropriate to apply regular expression methods.        
+
+•	Use of .apply() 
+
+1.   Create a function that returns the mean, sum, mode, median, and range (separately)      
+2.   Run the function into your chosen data set using the .apply() method.     
+3.   Post your work on GitHub
+
+Ok, in this week's assignment I loaded the following pandas features;
+import pandas as pd
+import re
+import seaborn as sns
+import numy as np
+import pandas.util.testing as tm
+
+Next, I loaded the 2010 State Drug Utilization Dataset "csv" file and listed the first 5 rows.
+I followed this up with the following:
+How to use REGEX in Pandas. I am going to use the "extract()" syntax to pull the first 7 characters of each Product Name using ^(start of the string)
+and {7} (for 7 characters) then create a new column called "Your_Col_Name_Cleaned".
+
+This is the syntax I used:
+# Let's pull that 7 Character String and put it into a new Column
+dataset['Your_Col_Name_Cleaned'] = dataset['Product Name'].str.extract(r'(^\w{7})')
+dataset.head(5)
+
+Next we move to Action Item 3
+Use of .apply()
+
+We were asked to create a function that returns the mean, mode, sum, median, and range (separately).
+Run the function against your dataset
+Post your work to GitHub
+
+First let's get rid of all columns that are not numeric
+or don't have the potential to show good values for mean, mode, median, sum, and range.
+This is the syntax I used:
+# Make the Drop Column List
+to_drop = ['Unnamed: 0', 'Utilization Type', 'State', 'Labeler Code', 'Product Code', 'Year', 'Quarter',
+           'Product Name', 'Suppression Used', 'Medicaid Amount Reimbursed', 'Non Medicaid Amount Reimbursed',
+           'Quarter Begin', 'Quarter Begin Date', 'Latitude', 'Longitude',
+           'Location', 'NDC', 'Your_Col_Name_Cleaned']
+dataset.drop(to_drop, inplace=True, axis=1)
+dataset.head()
+The output gave me four columns to work with (Package Size, Units Reimbured, Number of Prescriptions, and Total Amount Reimbursed).
+The following syntax was used to generate the "mean" for those four columns:
+
+# Now let's get the Mean for all the Columns using ".apply()"
+moddataset = dataset.apply(lambda x: np.mean(x) if x.name in ['Package Size', 'Units Reimbursed', 'Number of Prescriptions', 'Total Amount Reimbursed'] else x)
+print("Mean Function: Columns Not Dropped - Package Size, Units Reimbursed, Number of Prescriptions, and Total Amount Reimbursed:", moddataset, sep='\n')
+
+Next, I used the same syntax type to pull the "median" value from the four columns:
+# Next, let's see the Median for all the Columns using ".apply()"
+moddataset = dataset.apply(lambda x: np.median(x) if x.name in ['Package Size', 'Units Reimbursed', 'Number of Prescriptions', 'Total Amount Reimbursed'] else x)
+print("Median Function: Columns Not Dropped - Package Size, Units Reimbursed, Number of Prescriptions, and Total Amount Reimbursed:", moddataset, sep='\n')
+
+Next, I used the same syntax type to pull a "sum" value for each of the four columns:
+# Next, let's see the Sum of each of the Columns using ".apply()"
+moddataset = dataset.apply(lambda x: np.sum(x) if x.name in ['Package Size', 'Units Reimbursed', 'Number of Prescriptions', 'Total Amount Reimbursed'] else x)
+print("Sum Function: Columns Not Dropped - Package Size, Units Reimbursed, Number of Prescriptions, and Total Amount Reimbursed:", moddataset, sep='\n')
+
+Next, let's get the "mode" values for those four columns:
+# Let's see the Mode for the modified Dataset
+dataset.mode(axis=0)
+The syntax (axis=0) gives us a stacked mode value for each of the four columns, if (axis=1) had been used
+it would have given a "mode" value across for the various rows.
+
+Finally, we look at a "range" value for our four columns:
+# Now let's look at the range of our four Column Modified Dataset
+print("\n------------ Minimum ------------\n")
+print(dataset[['Package Size', 'Units Reimbursed', 'Number of Prescriptions', 'Total Amount Reimbursed']].min())
+
+print("\n------------ Maximum ------------\n")
+print(dataset[['Package Size', 'Units Reimbursed', 'Number of Prescriptions', 'Total Amount Reimbursed']].max())
+The above syntax gives us a Minumum value for each Column and a Maximum value for each Column:
+
+I found this function at: pythonprogramming.in/find-minimum-and-maximum-value-of-all-columns-from-pandas-dataframe
+
+This week's homework assignment was some basic extractions using REGEX and the .apply() syntax to generate function results.
