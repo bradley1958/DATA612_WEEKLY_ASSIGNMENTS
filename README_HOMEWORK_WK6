@@ -29,6 +29,11 @@ This is the syntax I used:
 dataset['Your_Col_Name_Cleaned'] = dataset['Product Name'].str.extract(r'(^\w{7})')
 dataset.head(5)
 
+Next, I did a dataset.info() just to verify that the Dtype of the new column and see that information on the other columns.
+
+Afterward, I pulled a secondary character string from the dataset - the first two characters of the Utilization Type and placed that output
+into a new column called:  Util_Code_Col_Extract.
+
 Next we move to Action Item 3
 Use of .apply()
 
