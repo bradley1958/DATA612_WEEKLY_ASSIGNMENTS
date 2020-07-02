@@ -114,9 +114,29 @@ print(get_MedDollar_data)
 
 <function get_MedDollar_data at 0x7fe10a69ff28>
 
+Action Item 3 - Write 1-3 paragraphs on how you applied the function syntax from our week 7 tasking:
+
+The purpose of my function (get_MedDollar_data) was to use the dollar values in the Total Medicaid Amount Column, Medicaid Amount Reimbursed, Non-Medicaid Amount Reimbursed for the 4th Quarter in 2010. 
+
+The subfunction MedAmountQtr4 was to have pulled information out of the dataset for only the 4th Quarter on the Medicaid Amount Reimbursed. 
+
+The subfunction NonMedAmountQtr4 was to have pulled information out of the dataset for only the 4th Quarter on the Non-Medicaid Amount Reimbursed.
+
+Then the syntax “return” was to add those two outputs together and generate an unstacked table showing the combined dollar amounts for MedAmount and NonMedAmount in a summed column for the 4th Quarter.
+
+
 The fact that I got a memory printout indicates that there is nothing preventing the syntax from running within Pandas; however, it doesn't indicate that it will run correctly against the "drugdata" dataframe. We see this below by the errors that were generated when I tried to pass the dataframe through the function (get-MedDollar_data).
 The purpose of my function (get_MedDollar_data) was to pull the MedAmount dollar values for the 4th Quarter of 2010 and add it to the NonMedAmount dollar values for the 4th Quarter of 2010. This was to have generated an unstacked output of the combined dollar amounts of Medicaid dollars added to Non-Medicaid dollars showing a total sum for the 4th Quarter.
 I failed in my attempt. I would require an example of how to write the syntax for a similiar problem in order to apply it to my dataset and get a favorable output.
+
+/usr/local/lib/python3.6/dist-packages/pandas/core/groupby/groupby.py in <lambda>(x)
+    912     def _python_agg_general(self, func, *args, **kwargs):
+    913         func = self._is_builtin_func(func)
+--> 914         f = lambda x: func(x, *args, **kwargs)
+    915 
+    916         # iterate through "columns" ex exclusions to populate output dict
+
+TypeError: get_MedDollar_data() missing 3 required positional arguments: 'MedAmount', 'NonMedAmount', and 'Quarter'
 
 Next, I tried a different approach (basic) to create a working function:
 # Let's use a function to add two columns of data together
